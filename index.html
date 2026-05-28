@@ -20,8 +20,44 @@
     /* Critical above-fold paint */
     html { background: #030008; }
   </style>
+
+  <!-- Intro Gift Box CSS -->
+  <link rel="stylesheet" href="css/intro.css" />
 </head>
 <body>
+
+  <!-- ═══════════════════════════════════════════════════════
+       INTRO SCENE — Gift Box Unboxing (from Model 3)
+       ═══════════════════════════════════════════════════════ -->
+  <div id="intro-scene">
+    <canvas id="particle-canvas-intro"></canvas>
+    <div id="gift-wrapper">
+      <div id="gift-container" onclick="openGift()">
+        <div id="gift-box">
+          <div class="gift-lid">
+            <div class="ribbon-h"></div>
+            <div class="ribbon-v"></div>
+            <div class="bow">
+              <div class="bow-left"></div>
+              <div class="bow-right"></div>
+              <div class="bow-center"></div>
+            </div>
+          </div>
+          <div class="gift-body">
+            <div class="ribbon-body-h"></div>
+            <div class="ribbon-body-v"></div>
+          </div>
+        </div>
+        <p class="gift-hint">✨ tap to open ✨</p>
+      </div>
+      <div id="bloom-container"></div>
+    </div>
+    <div id="petal-rain-intro"></div>
+    <div id="intro-overlay"></div>
+  </div>
+
+  <!-- ─── MAIN SITE (hidden until gift is opened) ──────────── -->
+  <div id="main-site" class="hidden">
 
   <!-- ─── CURSOR ──────────────────────────────────────────── -->
   <div class="cursor" aria-hidden="true"></div>
@@ -263,32 +299,14 @@
 
           <div class="letter__body">
             <p>
-              I want you to know that I noticed you before you ever noticed me.
-              I watched you exist in a room once and felt something shift —
-              <strong>oh, so this is what it feels like.</strong>
-              Like recognizing something you have spent your whole life almost knowing.
+              Hi sayang, what are you doing? I hope you’re doing okay and taking care of yourself. I just want to say sorry for everything we’ve been through. I know our relationship was never perfect like others, and we’ve gone through so many things together.
             </p>
 
             <p>
-              You find beauty in things other people walk past.
-              You make space for people without ever making noise about it.
-              You are tender in the exact places the world usually makes people hard.
-              That is <strong>rare</strong>. That is not a small thing.
+              But we’ve stayed strong all the way until this point, and I’m really proud of us 💗 I hope we can keep being strong, because I truly believe that two people who are both afraid of losing each other will always find a way to stay together no matter what comes their way. I love you, so so much. And I really hope we’ll keep choosing each other until one day we come home to the same home together 💍💗,I love you solehah💗
             </p>
 
-            <p>
-              There are nights I want to return to the very first time we spoke —
-              just to feel that single second again. The one where something settled inside me,
-              and some quiet part of me already knew:
-              <strong>she is going to be everything.</strong>
-            </p>
-
-            <p>
-              I don't know how to measure what this is.
-              But I know it is the most honest thing I have ever built.
-              And I would build it again — every time, in every life, in every universe.
-              <strong>Always, inevitably, back to you.</strong>
-            </p>
+          
           </div>
 
           <span class="letter__sign">— yours, completely.</span>
@@ -355,8 +373,15 @@
   <script src="js/engine/scene-manager.js"></script>
   <script src="js/engine/interaction-engine.js"></script>
 
+  <!-- Intro -->
+  <script src="js/intro-particles.js"></script>
+  <script src="js/intro.js"></script>
+
   <!-- Main -->
   <script src="js/main/script.js"></script>
+
+
+  </div><!-- /#main-site -->
 
 </body>
 </html>

@@ -285,24 +285,12 @@ function initHeartFloaters() {
 
 // ─── INIT ─────────────────────────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
-  // Build dynamic sections
+  // Build dynamic sections (bisa disiapkan sebelum intro selesai)
   DOMBuilder.buildTimeline();
-  // Gallery is static HTML in index.html — edit img src langsung di sana
 
-  // Ambient 2D particles overlay
-  const ambientParticles = new AmbientParticles('particle-canvas');
-  ambientParticles.init();
-
-  // Audio
-  const audio = new AudioSystem();
-  audio.init();
-
-  // Scroll progress
-  initScrollProgress();
-
-  // Hero float symbols
-  initHeartFloaters();
-
-  // Boot app
-  window.App.init();
+  // Mulai intro gift box
+  if (typeof initIntroScene === 'function') {
+    initIntroScene();
+  }
+  // App.init() akan dipanggil oleh intro.js setelah gift dibuka
 });
